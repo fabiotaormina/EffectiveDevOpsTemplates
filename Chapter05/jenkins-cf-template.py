@@ -33,7 +33,7 @@ from awacs.sts import AssumeRole
 ApplicationName = "jenkins"
 ApplicationPort = "8080"
 GithubAccount = "fabiotaormina"
-GithubAnsibleURL = "https://github.com/{}/ansible".format(GithubAccount)
+GithubAnsibleURL = "https://github.com/{}/ansible/tree/master/Chapter05/ansible".format(GithubAccount)
 
 PublicCidrIp = str(ip_network(get_ip()))
 
