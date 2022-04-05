@@ -1,5 +1,4 @@
 {
-    "Description": "Effective DevOps in AWS: HelloWorld web application",
     "Outputs": {
         "InstancePublicIp": {
             "Description": "Public IP of our instance.",
@@ -43,7 +42,7 @@
                 "GroupDescription": "Allow SSH and TCP/3000 access",
                 "SecurityGroupIngress": [
                     {
-                        "CidrIp": "5.11.101.109/32",
+                        "CidrIp": "79.44.115.102/32",
                         "FromPort": "22",
                         "IpProtocol": "tcp",
                         "ToPort": "22"
@@ -60,7 +59,7 @@
         },
         "instance": {
             "Properties": {
-                "ImageId": "ami-40142d25",
+                "ImageId": "ami-cfe4b2b0",
                 "InstanceType": "t2.micro",
                 "KeyName": {
                     "Ref": "KeyPair"
