@@ -23,7 +23,7 @@ GithubAnsibleURL = "https://github.com/{}/ansible".format(GithubAccount)
 PublicCidrIp = str(ip_network(get_ip()))
 
 AnsiblePullCmd = \
-    "/usr/bin/ansible-pull -U {} {}.yml -i localhost".format(
+    "/usr/bin/ansible-pull --url {} -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 {}.yml".format(
         GithubAnsibleURL,
         ApplicationName
     )
@@ -31,7 +31,7 @@ AnsiblePullCmd = \
 t = Template()
 
 # commented out - begin: 'Template' object has no attribute 'add_description' in Python 3
-# t.add_description("Effective DevOps in AWS: HelloWorld web application")
+#t.add_description("Effective DevOps in AWS: HelloWorld web application")
 # commented out - end
 
 t.add_parameter(Parameter(
@@ -70,7 +70,7 @@ ud = Base64(Join('\n', [
 
 t.add_resource(ec2.Instance(
     "instance",
-    ImageId="ami-40142d25",
+    ImageId="ami-cfe4b2b0",
     InstanceType="t2.micro",
     SecurityGroups=[Ref("SecurityGroup")],
     KeyName=Ref("KeyPair"),
