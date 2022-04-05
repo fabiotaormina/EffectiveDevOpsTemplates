@@ -15,10 +15,10 @@ from troposphere import (
     Template,
 )
 
-ApplicationName = "helloworld"
+ApplicationName = "Chapter03/helloworld"
 ApplicationPort = "3000"
 GithubAccount = "fabiotaormina"
-GithubAnsibleURL = "https://github.com/{}/ansible".format(GithubAccount)
+GithubAnsibleURL = "https://github.com/{}/Ansible".format(GithubAccount)
 
 PublicCidrIp = str(ip_network(get_ip()))
 

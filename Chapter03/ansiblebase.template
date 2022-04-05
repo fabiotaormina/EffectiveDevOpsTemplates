@@ -77,8 +77,8 @@
                                 "#!/bin/bash",
                                 "yum install --enablerepo=epel -y git",
                                 "yum install --enablerepo=epel -y ansible",
-                                "/usr/bin/ansible-pull --url https://github.com/fabiotaormina/ansible -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 helloworld.yml",
-                                "echo '*/10 * * * * /usr/bin/ansible-pull --url https://github.com/fabiotaormina/ansible -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 helloworld.yml' > /etc/cron.d/ansible-pull"
+                                "/usr/bin/ansible-pull --url https://github.com/fabiotaormina/Ansible -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 Chapter03/helloworld.yml",
+                                "echo '*/10 * * * * /usr/bin/ansible-pull --url https://github.com/fabiotaormina/Ansible -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 Chapter03/helloworld.yml' > /etc/cron.d/ansible-pull"
                             ]
                         ]
                     }
