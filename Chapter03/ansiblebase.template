@@ -1,5 +1,4 @@
 {
-    "Description": "Effective DevOps in AWS: HelloWorld web application",
     "Outputs": {
         "InstancePublicIp": {
             "Description": "Public IP of our instance.",
@@ -43,7 +42,7 @@
                 "GroupDescription": "Allow SSH and TCP/3000 access",
                 "SecurityGroupIngress": [
                     {
-                        "CidrIp": "5.11.101.109/32",
+                        "CidrIp": "79.44.115.102/32",
                         "FromPort": "22",
                         "IpProtocol": "tcp",
                         "ToPort": "22"
@@ -78,8 +77,8 @@
                                 "#!/bin/bash",
                                 "yum install --enablerepo=epel -y git",
                                 "yum install --enablerepo=epel -y ansible",
-                                "/usr/bin/ansible-pull -U https://github.com/EffectiveDevOpsWithAWS/ansible helloworld.yml -i localhost",
-                                "echo '*/10 * * * * /usr/bin/ansible-pull -U https://github.com/EffectiveDevOpsWithAWS/ansible helloworld.yml -i localhost' > /etc/cron.d/ansible-pull"
+                                "/usr/bin/ansible-pull -U https://github.com/fabiotaormina/ansible helloworld.yml -i localhost",
+                                "echo '*/10 * * * * /usr/bin/ansible-pull -U https://github.com/fabiotaormina/ansible helloworld.yml -i localhost' > /etc/cron.d/ansible-pull"
                             ]
                         ]
                     }

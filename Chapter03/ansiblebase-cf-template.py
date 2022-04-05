@@ -1,4 +1,5 @@
 """Generating CloudFormation template."""
+
 from ipaddress import ip_network
 
 from ipify import get_ip
@@ -16,7 +17,7 @@ from troposphere import (
 
 ApplicationName = "helloworld"
 ApplicationPort = "3000"
-GithubAccount = "EffectiveDevOpsWithAWS"
+GithubAccount = "fabiotaormina"
 GithubAnsibleURL = "https://github.com/{}/ansible".format(GithubAccount)
 
 PublicCidrIp = str(ip_network(get_ip()))
@@ -29,7 +30,9 @@ AnsiblePullCmd = \
 
 t = Template()
 
-t.add_description("Effective DevOps in AWS: HelloWorld web application")
+# commented out - begin: 'Template' object has no attribute 'add_description' in Python 3
+# t.add_description("Effective DevOps in AWS: HelloWorld web application")
+# commented out - end
 
 t.add_parameter(Parameter(
     "KeyPair",
@@ -89,5 +92,4 @@ t.add_output(Output(
     ]),
 ))
 
-print t.to_json()
-
+print(t.to_json())
