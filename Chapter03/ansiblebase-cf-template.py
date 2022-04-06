@@ -15,7 +15,7 @@ from troposphere import (
     Template,
 )
 
-ApplicationName = "Chapter03/helloworld"
+ApplicationName = "Chapter03/helloworld.yml"
 ApplicationPort = "3000"
 GithubAccount = "fabiotaormina"
 GithubAnsibleURL = "https://github.com/{}/Ansible".format(GithubAccount)
@@ -23,7 +23,7 @@ GithubAnsibleURL = "https://github.com/{}/Ansible".format(GithubAccount)
 PublicCidrIp = str(ip_network(get_ip()))
 
 AnsiblePullCmd = \
-    "/usr/bin/ansible-pull --url {} -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 {}.yml".format(
+    "/usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url {} {}".format(
         GithubAnsibleURL,
         ApplicationName
     )
