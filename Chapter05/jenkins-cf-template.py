@@ -30,22 +30,24 @@ from awacs.aws import (
 
 from awacs.sts import AssumeRole
 
-ApplicationName = "jenkins"
+ApplicationName = "Chapter05/jenkins.yml"
 ApplicationPort = "8080"
-GithubAccount = "yogeshraheja"
-GithubAnsibleURL = "https://github.com/{}/ansible".format(GithubAccount)
+GithubAccount = "fabiotaormina"
+GithubAnsibleURL = "https://github.com/{}/Ansible".format(GithubAccount)
 
 PublicCidrIp = str(ip_network(get_ip()))
 
 AnsiblePullCmd = \
-    "/usr/bin/ansible-pull -U {} {}.yml -i localhost".format(
+    "/usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url {} {}".format(
     GithubAnsibleURL,
     ApplicationName
 )
 
 t = Template()
 
-t.add_description("Effective DevOps in AWS: HelloWorld web application")
+# commented out - begin: 'Template' object has no attribute 'add_description' in Python 3
+# t.add_description("Effective DevOps in AWS: HelloWorld web application")
+# commented out - end
 
 t.add_parameter(Parameter(
     "KeyPair",
@@ -102,7 +104,7 @@ t.add_resource(InstanceProfile(
 
 t.add_resource(ec2.Instance(
     "instance",
-    ImageId="ami-40142d25",
+    ImageId="ami-cfe4b2b0",
     InstanceType="t2.micro",
     SecurityGroups=[Ref("SecurityGroup")],
     KeyName=Ref("KeyPair"),
@@ -125,4 +127,4 @@ t.add_output(Output(
     ]),
 ))
 
-print t.to_json()
+print(t.to_json())
