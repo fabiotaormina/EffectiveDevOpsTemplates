@@ -54,7 +54,7 @@
                     "Statement": [
                         {
                             "Action": [
-                                "s3:*"
+                                "codepipeline:*"
                             ],
                             "Effect": "Allow",
                             "Resource": [
@@ -63,7 +63,7 @@
                         }
                     ]
                 },
-                "PolicyName": "AllowS3",
+                "PolicyName": "AllowCodePipeline",
                 "Roles": [
                     {
                         "Ref": "Role"

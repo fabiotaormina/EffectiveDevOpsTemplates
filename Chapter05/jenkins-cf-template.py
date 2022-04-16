@@ -112,14 +112,29 @@ t.add_resource(ec2.Instance(
     IamInstanceProfile=Ref("InstanceProfile"),
 ))
 
+#t.add_resource(IAMPolicy(
+#    "Policy",
+#    PolicyName="AllowS3",
+#    PolicyDocument=Policy(
+#        Statement=[
+#            Statement(
+#                Effect=Allow,
+#                Action=[Action("s3", "*")],
+#                Resource=["*"])
+#        ]
+#    ),
+#    Roles=[Ref("Role")]
+#))
+
+
 t.add_resource(IAMPolicy(
     "Policy",
-    PolicyName="AllowS3",
+    PolicyName="AllowCodePipeline",
     PolicyDocument=Policy(
         Statement=[
             Statement(
                 Effect=Allow,
-                Action=[Action("s3", "*")],
+                Action=[Action("codepipeline", "*")],
                 Resource=["*"])
         ]
     ),
