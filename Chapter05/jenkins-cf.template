@@ -63,7 +63,12 @@
                         }
                     ]
                 },
-                "PolicyName": "AllowS3"
+                "PolicyName": "AllowS3",
+                "Roles": [
+                    {
+                        "Ref": "Role"
+                    }
+                ]
             },
             "Type": "AWS::IAM::Policy"
         },
