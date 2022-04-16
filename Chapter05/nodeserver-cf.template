@@ -135,8 +135,8 @@
                                 "#!/bin/bash",
                                 "yum install --enablerepo=epel -y git",
                                 "pip install ansible",
-                                "/usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/nodeserver",
-                                "echo '*/10 * * * * /usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/nodeserver' > /etc/cron.d/ansible-pull"
+                                "/usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/nodeserver.yml",
+                                "echo '*/10 * * * * /usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/nodeserver.yml' > /etc/cron.d/ansible-pull"
                             ]
                         ]
                     }
