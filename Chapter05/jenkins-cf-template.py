@@ -112,6 +112,19 @@ t.add_resource(ec2.Instance(
     IamInstanceProfile=Ref("InstanceProfile"),
 ))
 
+t.add_resource(IAMPolicy(
+    "Policy",
+    PolicyName="AllowS3",
+    PolicyDocument=Policy(
+        Statement=[
+            Statement(
+                Effect=Allow,
+                Action=[Action("s3", "*")],
+                Resource=["*"])
+        ]
+    ),
+))
+
 t.add_output(Output(
     "InstancePublicIp",
     Description="Public IP of our instance.",
