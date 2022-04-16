@@ -135,8 +135,8 @@
                                 "#!/bin/bash",
                                 "yum install --enablerepo=epel -y git",
                                 "yum install --enablerepo=epel -y ansible",
-                                "/usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/jenkins.yml",
-                                "echo '*/10 * * * * /usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/jenkins.yml' > /etc/cron.d/ansible-pull"
+                                "/usr/local/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/jenkins.yml",
+                                "echo '*/10 * * * * /usr/local/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url https://github.com/fabiotaormina/Ansible Chapter05/jenkins.yml' > /etc/cron.d/ansible-pull"
                             ]
                         ]
                     }
