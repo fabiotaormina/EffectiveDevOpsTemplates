@@ -37,7 +37,7 @@ GitHubAccount = "fabiotaormina"
 GitHubAnsibleURL = "https://github.com/{}/Ansible".format(GitHubAccount)
 
 AnsiblePullCmd = \
-    "/usr/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url {} {}".format(
+    "/usr/local/bin/ansible-pull -i localhost -e ansible_python_interpreter=/usr/bin/python2.7 --sleep 60 --url {} {}".format(
         GitHubAnsibleURL,
         ApplicationName
     )
