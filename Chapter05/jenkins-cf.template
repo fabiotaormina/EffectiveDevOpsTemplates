@@ -97,7 +97,7 @@
                 "GroupDescription": "Allow SSH and TCP/8080 access",
                 "SecurityGroupIngress": [
                     {
-                        "CidrIp": "79.44.115.22/32",
+                        "CidrIp": "79.40.112.175/32",
                         "FromPort": "22",
                         "IpProtocol": "tcp",
                         "ToPort": "22"
