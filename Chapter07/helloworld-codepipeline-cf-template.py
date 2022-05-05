@@ -159,22 +159,6 @@ t.add_resource(Pipeline(
             ]
         ),
         Stages(
-            Name="Approval",
-            Actions=[
-                Actions(
-                    Name="Approval",
-                    ActionTypeId=ActionTypeId(
-                        Category="Approval",
-                        Owner="AWS",
-                        Version="1",
-                        Provider="Manual"
-                    ),
-                    Configuration={},
-                    InputArtifacts=[],
-                )
-            ]
-        ),
-        Stages(
             Name="Staging",
             Actions=[
                 Actions(
@@ -205,22 +189,22 @@ t.add_resource(Pipeline(
                 )
             ]
         ),
-        # Stages(
-        #     Name="Approval",
-        #     Actions=[
-        #         Actions(
-        #             Name="Approval",
-        #             ActionTypeId=ActionTypeId(
-        #                 Category="Approval",
-        #                 Owner="AWS",
-        #                 Version="1",
-        #                 Provider="Manual"
-        #             ),
-        #             Configuration={},
-        #             InputArtifacts=[],
-        #         )
-        #     ]
-        # ),
+        Stages(
+            Name="Approval",
+            Actions=[
+                Actions(
+                    Name="Approval",
+                    ActionTypeId=ActionTypeId(
+                        Category="Approval",
+                        Owner="AWS",
+                        Version="1",
+                        Provider="Manual"
+                    ),
+                    Configuration={},
+                    InputArtifacts=[],
+                )
+            ]
+        ),
         Stages(
             Name="Production",
             Actions=[

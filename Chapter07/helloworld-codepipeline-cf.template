@@ -122,22 +122,6 @@
                         "Actions": [
                             {
                                 "ActionTypeId": {
-                                    "Category": "Approval",
-                                    "Owner": "AWS",
-                                    "Provider": "Manual",
-                                    "Version": "1"
-                                },
-                                "Configuration": {},
-                                "InputArtifacts": [],
-                                "Name": "Approval"
-                            }
-                        ],
-                        "Name": "Approval"
-                    },
-                    {
-                        "Actions": [
-                            {
-                                "ActionTypeId": {
                                     "Category": "Deploy",
                                     "Owner": "AWS",
                                     "Provider": "CloudFormation",
@@ -169,6 +153,22 @@
                             }
                         ],
                         "Name": "Staging"
+                    },
+                    {
+                        "Actions": [
+                            {
+                                "ActionTypeId": {
+                                    "Category": "Approval",
+                                    "Owner": "AWS",
+                                    "Provider": "Manual",
+                                    "Version": "1"
+                                },
+                                "Configuration": {},
+                                "InputArtifacts": [],
+                                "Name": "Approval"
+                            }
+                        ],
+                        "Name": "Approval"
                     },
                     {
                         "Actions": [
